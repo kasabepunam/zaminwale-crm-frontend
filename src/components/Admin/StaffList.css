@@ -1,0 +1,170 @@
+/* ================= STAFF LIST PAGE ================= */
+
+/* Container */
+.staff-list-container {
+  margin-left: 100px; /* Sidebar width + small gap */
+  padding: 20px;
+  background: #f5f7fa;
+  min-height: 100vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Page Header */
+.staff-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.staff-list-header h2 {
+  color: #1f2a49;
+  font-size: 28px;
+  margin: 0;
+}
+
+/* Filter & Search */
+.staff-list-filters {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+.staff-list-filters input,
+.staff-list-filters select {
+  padding: 8px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  outline: none;
+  font-size: 14px;
+}
+
+.staff-list-filters input:focus,
+.staff-list-filters select:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+/* Table */
+.staff-list-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.staff-list-table th,
+.staff-list-table td {
+  padding: 12px 15px;
+  text-align: left;
+}
+
+.staff-list-table th {
+  background: #1f2a49;
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.staff-list-table tr:nth-child(even) {
+  background: #f0f4f8;
+}
+
+.staff-list-table tr:hover {
+  background: #e0e7ff;
+  transition: background 0.3s ease;
+}
+
+/* Action Buttons */
+.staff-action-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.staff-action-buttons button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: all 0.2s ease;
+}
+
+.staff-action-buttons .edit-btn {
+  background: #3b82f6;
+  color: #fff;
+}
+
+.staff-action-buttons .edit-btn:hover {
+  background: #2563eb;
+}
+
+.staff-action-buttons .delete-btn {
+  background: #ef4444;
+  color: #fff;
+}
+
+.staff-action-buttons .delete-btn:hover {
+  background: #b91c1c;
+}
+
+/* Summary Cards */
+.staff-summary-cards {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.staff-summary-card {
+  background: #fff;
+  flex: 1;
+  min-width: 180px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.staff-summary-card:hover {
+  transform: translateY(-3px);
+}
+
+.staff-summary-card h3 {
+  margin: 0;
+  font-size: 20px;
+  color: #1f2a49;
+}
+
+.staff-summary-card p {
+  margin: 5px 0 0 0;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .staff-list-container {
+    margin-left: 0;
+    padding: 15px;
+  }
+
+  .staff-summary-cards {
+    flex-direction: column;
+  }
+
+  .staff-list-filters {
+    flex-direction: column;
+  }
+
+  .staff-list-table th,
+  .staff-list-table td {
+    padding: 10px 8px;
+    font-size: 13px;
+  }
+}

@@ -1,0 +1,13 @@
+.footer {
+    width: 100%;
+    padding: 12px 0;
+    text-align: center;
+    background-color: #ffffff; /* White background */
+    color: #000000; /* Blue text for copyright */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    font-size: 14px;
+    border-top: 1px solid #ccc; /* subtle top border */
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.05);
+}

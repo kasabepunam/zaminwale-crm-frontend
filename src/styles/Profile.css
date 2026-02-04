@@ -1,0 +1,32 @@
+/* Main container */
+.profile-container {
+  margin-left: 240px;   /* Sidebar width इतकं */
+  padding: 30px;
+  min-height: 100vh;
+  background: #f5f7fb;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* Profile card */
+.profile-card {
+  width: 100%;
+  max-width: 500px;
+  background: #fff;
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+
+  margin-top: 40px;
+}
+
+.profile-card h2 {
+  margin-bottom: 5px;
+}
+
+.profile-card p {
+  margin: 6px 0;
+  font-size: 14px;
+}

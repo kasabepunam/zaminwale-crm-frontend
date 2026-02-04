@@ -1,0 +1,122 @@
+
+.reports-page {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 15px;
+    align-items: center;
+}
+
+.small-search {
+    padding: 4px 8px;
+    font-size: 13px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    flex: 0 0 180px;
+}
+
+.status-dropdown {
+    padding: 4px 8px;
+    font-size: 13px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.small-datepicker input {
+    padding: 4px 8px;
+    font-size: 13px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 130px;
+}
+
+.export-btn {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 13px;
+    transition: 0.2s;
+}
+
+.export-btn:hover {
+    background-color: #0056b3;
+}
+
+.reports-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    font-size: 13px;
+}
+
+.reports-table th,
+.reports-table td {
+    border: 1px solid #ddd;
+    padding: 6px;
+    text-align: center;
+}
+
+.reports-table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+.pagination {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+}
+
+.pagination button {
+    padding: 4px 8px;
+    border: 1px solid #ccc;
+    background-color: white;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 13px;
+}
+
+.pagination button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Status colors */
+.status-cell.saledeeddone {
+    color: green;
+    font-weight: bold;
+}
+
+.status-cell.extract712done {
+    color: #007bff;
+    font-weight: bold;
+}
+
+.status-cell.refundbooking {
+    color: orange;
+    font-weight: bold;
+}
+
+.status-cell.cancelbooking {
+    color: red;
+    font-weight: bold;
+}
+
+.status-cell.active {
+    color: #444;
+    font-weight: bold;
+}

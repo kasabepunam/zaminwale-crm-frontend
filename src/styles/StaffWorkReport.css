@@ -1,0 +1,81 @@
+.workreport-page {
+  padding: 20px;
+  font-family: sans-serif;
+}
+
+.filters {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+.filters select, .filters button {
+  padding: 5px 10px;
+  font-size: 14px;
+}
+
+.summary-cards {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  padding: 10px 15px;
+  background: #f0f0f0;
+  border-radius: 6px;
+}
+
+.card.completed { background: #d4edda; }
+.card.pending { background: #fff3cd; }
+
+.workreport-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.workreport-table th, .workreport-table td {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.workreport-table th {
+  background: #f5f5f5;
+}
+
+.workreport-table tr:nth-child(even) { background: #fafafa; }
+
+.workreport-table tr:hover { background: #f1f1f1; }
+
+.btn {
+  padding: 5px 10px;
+  border: none;
+  background: #007bff;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.btn:hover { opacity: 0.9; }
+
+.btn.outline {
+  background: transparent;
+  border: 1px solid #007bff;
+  color: #007bff;
+}
+
+.btn.danger {
+  background: #dc3545;
+  color: white;
+}
+
+.btn.small {
+  padding: 2px 6px;
+  font-size: 12px;
+}
+
+.workreport-table td.completed { color: green; }
+.workreport-table td.pending { color: orange; }

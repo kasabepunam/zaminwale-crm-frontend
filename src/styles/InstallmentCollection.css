@@ -1,0 +1,227 @@
+/* ================= PAGE LAYOUT ================= */
+.installment-collection-body {
+  padding: 20px 25px;
+  background: #f4f6f9;
+  min-height: 100vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin-left:140px;
+}
+
+.installment-collection-body h1 {
+  font-size: 22px;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 15px;
+}
+
+/* ================= SUMMARY CARDS ================= */
+.summary-cards {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 18px;
+}
+
+.summary-card {
+  flex: 1;
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 18px 22px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  position: relative;
+  overflow: hidden;
+}
+
+.summary-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 6px;
+  height: 100%;
+}
+
+.summary-card.received::before {
+  background: #16a34a;
+}
+
+.summary-card.balance::before {
+  background: #dc2626;
+}
+
+.summary-card h3 {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.summary-card p {
+  font-size: 22px;
+  font-weight: 700;
+  color: #111827;
+}
+
+/* ================= FILTER ROW ================= */
+.filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  background: #ffffff;
+  padding: 12px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  margin-bottom: 15px;
+}
+
+.filter-row input,
+.filter-row select {
+  padding: 8px 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 13px;
+  min-width: 180px;
+}
+
+.filter-row input:focus,
+.filter-row select:focus {
+  outline: none;
+  border-color: #2563eb;
+}
+
+.filter-row button {
+  background: #2563eb;
+  color: #ffffff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.filter-row button:hover {
+  background: #1d4ed8;
+}
+
+/* ================= MAIN TABLE ================= */
+.customers-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.customers-table thead {
+  background: #1f2937;
+}
+
+.customers-table th {
+  color: #00000;
+  padding: 10px;
+  font-size: 13px;
+  font-weight: 500;
+  text-align: left;
+}
+
+.customers-table td {
+  padding: 9px 10px;
+  font-size: 13px;
+  color: #374151;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.customers-table tbody tr:hover {
+  background: #f9fafb;
+}
+
+.customers-table button {
+  padding: 5px 10px;
+  font-size: 12px;
+  border-radius: 5px;
+  border: none;
+  background: #0ea5e9;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.customers-table button:hover {
+  background: #0284c7;
+}
+
+/* ================= EXPANDED INSTALLMENT TABLE ================= */
+.installment-inline-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+  background: #f8fafc;
+  border-radius: 6px;
+}
+
+.installment-inline-table thead {
+  background: #e5e7eb;
+}
+
+.installment-inline-table th {
+  font-size: 12px;
+  padding: 8px;
+  color: #374151;
+  text-align: left;
+}
+
+.installment-inline-table td {
+  font-size: 12px;
+  padding: 7px 8px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.installment-inline-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* ================= PAGINATION ================= */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.pagination button {
+  background: #2563eb;
+  color: #ffffff;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.pagination button:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+}
+
+.pagination span {
+  font-size: 13px;
+  color: #374151;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+  .summary-cards {
+    flex-direction: column;
+  }
+
+  .filter-row {
+    flex-direction: column;
+  }
+
+  .filter-row input,
+  .filter-row select,
+  .filter-row button {
+    width: 100%;
+  }
+}

@@ -1,0 +1,42 @@
+/* Light Theme (default) */
+:root {
+  --bg-color: #f5f5f5;
+  --card-bg: #fff;
+  --text-color: #111;
+  --subtext-color: #666;
+  --table-bg: #fafafa;
+  --table-header-bg: #f1f1f1;
+}
+
+/* Dark Theme */
+.dark-theme {
+  --bg-color: #1e1e2f;
+  --card-bg: #2b2b3b;
+  --text-color: #f5f5f5;
+  --subtext-color: #ccc;
+  --table-bg: #2b2b3b;
+  --table-header-bg: #3a3a4a;
+}
+
+/* Apply variables */
+.dashboard-container {
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+.dashboard-card,
+.chart-card,
+.table-card,
+.searchbar {
+  background: var(--card-bg);
+  color: var(--text-color);
+}
+
+.data-table th {
+  background-color: var(--table-header-bg);
+  color: var(--text-color);
+}
+
+.data-table tr:nth-child(even) {
+  background-color: var(--table-bg);
+}

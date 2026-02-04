@@ -1,0 +1,220 @@
+/* Main Container */
+.inactive-container {
+  margin-left: 140px;
+  padding: 20px;
+  background: #f8f9fa;
+  min-height: 100vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Page Title */
+.inactive-title {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #2c3e50;
+}
+
+/* ================= CARD ================= */
+
+.inactive-card {
+  background: linear-gradient(135deg, #2465cf, #2b5f85);
+  color: white;
+  padding: 18px 25px;
+  border-radius: 12px;
+  width: 260px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease;
+}
+
+.inactive-card:hover {
+  transform: translateY(-3px);
+}
+
+.inactive-card h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+.inactive-card p {
+  margin-top: 8px;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+/* ================= FILTER BAR ================= */
+
+.filter-bar {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+/* Search */
+.search-box {
+  flex: 1;
+  max-width: 300px;
+  padding: 8px 12px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.search-box:focus {
+  border-color: #2465cf;
+  box-shadow: 0 0 0 1px #2465cf33;
+}
+
+/* Village Dropdown */
+.village-filter {
+  padding: 8px 12px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  outline: none;
+  cursor: pointer;
+}
+
+.village-filter:focus {
+  border-color: #2465cf;
+}
+
+/* Export Button */
+.export-btn {
+  margin-left: 10px;
+  padding: 7px 14px;
+  background-color: #2465cf;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.export-btn:hover {
+  background-color: #2b5f85;
+  transform: scale(1.03);
+}
+
+/* ================= TABLE ================= */
+
+/* Table wrapper */
+.inactive-table-wrapper {
+  overflow-x: auto;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Table */
+.inactive-table-wrapper table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 900px;
+}
+
+/* Table Header */
+.inactive-table-wrapper th {
+  background: linear-gradient(#2b5f85, #2465cf);
+  color: white;
+  font-weight: 600;
+  padding: 12px 10px;
+  text-align: left;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  font-size: 14px;
+}
+
+/* Table Data */
+.inactive-table-wrapper td {
+  padding: 10px;
+  border-bottom: 1px solid #e1e4e8;
+  color: #2c3e50;
+  font-size: 14px;
+}
+
+/* Row Styling */
+.inactive-table-wrapper tr:nth-child(even) {
+  background-color: #fdfdfd;
+}
+
+.inactive-table-wrapper tr:hover {
+  background-color: #f0f4f8;
+  transition: background 0.3s;
+}
+
+/* ================= PAGINATION ================= */
+
+.pagination-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+.pagination-controls button {
+  background-color: #2e86de;
+  color: #fff;
+  border: none;
+  padding: 7px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.pagination-controls button:hover:not(:disabled) {
+  background-color: #1b4f72;
+}
+
+.pagination-controls button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.pagination-controls span {
+  font-weight: 500;
+  color: #34495e;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+  .inactive-container {
+    margin-left: 10px;
+    padding: 10px;
+  }
+
+  .inactive-title {
+    font-size: 22px;
+  }
+
+  .inactive-card {
+    width: 100%;
+    text-align: center;
+  }
+
+  .inactive-table-wrapper table {
+    min-width: 600px;
+  }
+
+  .filter-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-box {
+    max-width: 100%;
+  }
+
+  .export-btn {
+    width: 100%;
+  }
+}

@@ -1,0 +1,131 @@
+.total-received-container {
+  padding: 20px;
+  background: #f4f6f9;
+  margin-left:130px;
+}
+
+/* ================= SUMMARY CARDS ================= */
+.summary-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);   /* 4 cards in one row */
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.total-box {
+  background: white;
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  text-align: center;
+  transition: 0.3s ease;
+}
+
+.total-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.total-box h3 {
+  font-size: 15px;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.total-box p {
+  font-size: 22px;
+  font-weight: bold;
+  color: #111;
+}
+
+/* Color variants */
+.total-box.sale {
+  border-top: 4px solid #4f46e5;
+}
+
+.total-box.booking {
+  border-top: 4px solid #16a34a;
+}
+
+.total-box.installment {
+  border-top: 4px solid #ea580c;
+}
+
+/* ================= FILTER BAR ================= */
+.filter-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  background: white;
+  padding: 12px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.filter-container input,
+.filter-container select {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+
+.filter-container button {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.filter-container button:hover {
+  background: #1d4ed8;
+}
+
+/* ================= TABLE ================= */
+.report-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.report-table th {
+  background: #2563eb;
+  color: white;
+  padding: 10px;
+  font-size: 14px;
+}
+
+.report-table td {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+}
+
+.report-table tr:hover {
+  background: #f1f5f9;
+}
+
+/* ================= PAGINATION ================= */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.pagination button {
+  padding: 8px 14px;
+  background: #2563eb;
+  color: black;
+  border: none;
+  border-radius: 6px;
+}
+
+.pagination button:disabled {
+  background: #ccc;
+}

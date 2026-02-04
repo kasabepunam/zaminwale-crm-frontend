@@ -1,0 +1,217 @@
+/* ================================
+   PAGE CONTAINER
+================================ */
+.customer-list-container {
+  padding: 16px 20px;
+  margin-left: 140px;
+  background: #f4f6fb;
+  min-height: 100vh;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+/* ================================
+   TOP CONTROLS
+================================ */
+.controls.clean-layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  background: #ffffff;
+  padding: 12px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  margin-bottom: 12px;
+}
+
+/* SEARCH */
+.searchbar {
+  position: relative;
+}
+.searchbar input {
+  padding: 8px 12px 8px 32px;
+  border-radius: 6px;
+  border: 1px solid #ffffff;
+  min-width: 260px;
+}
+.search-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #777;
+}
+
+/* DROPDOWNS */
+.controls select {
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #d0d7e2;
+  background: #fff;
+}
+
+/* BUTTONS */
+.controls button {
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.filter-toggle-btn {
+  background: #2563eb;
+  color: #fff;
+}
+.reset-btn {
+  background: #6b7280;
+  color: #fff;
+}
+.export-btn {
+  background: #16a34a;
+  color: #fff;
+}
+.delete-btn {
+  background: #dc2626;
+  color: #fff;
+}
+
+.controls button:hover {
+  opacity: 0.9;
+}
+
+/* ================================
+   TABLE WRAPPER
+================================ */
+.customer-table-wrapper {
+  overflow-x: auto;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+/* ================================
+   TABLE
+================================ */
+.customer-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+/* HEADER */
+.customer-table thead {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: linear-gradient(90deg, #404243, #2b5f85, #2465cf);
+}
+
+.customer-table thead th {
+  color: #ffffff;
+  padding: 10px;
+  text-align: left;
+  white-space: nowrap;
+  cursor: pointer;
+  font-weight: 600;
+  border-right: 1px solid rgba(255,255,255,0.2);
+  background: linear-gradient(#2b5f85, #2465cf);
+}
+
+/* BODY */
+.customer-table tbody td {
+  padding: 8px 10px;
+  border-bottom: 1px solid #e5e7eb;
+  white-space: nowrap;
+}
+
+.customer-table tbody tr:hover {
+  background: #f1f5ff;
+}
+
+/* ================================
+   ADDRESS COLUMN WIDTH FIX ✅
+   (Checkbox=1, SrNo=2, Date=3,
+    CustomerId=4, Name=5, Address=6)
+================================ */
+.customer-table th:nth-child(6),
+.customer-table td:nth-child(6) {
+  width: 180px;           /* 👈 adjust if needed */
+  max-width: 180px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* CLICKABLE NAME */
+.clickable-name {
+  color: #2563eb;
+  font-weight: 600;
+  cursor: pointer;
+}
+.clickable-name:hover {
+  text-decoration: underline;
+}
+
+/* CHEQUE COLUMN */
+.cheque-column {
+  white-space: pre-line;
+  font-size: 12px;
+}
+
+/* ================================
+   STATUS COLORS
+================================ */
+td[style*="green"] {
+  font-weight: 600;
+}
+td[style*="red"] {
+  font-weight: 600;
+}
+
+/* ================================
+   ACTION BUTTONS
+================================ */
+.customer-table button {
+  padding: 6px 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.customer-table button:hover {
+  opacity: 0.85;
+}
+
+.whatsapp-btn {
+  background: #25d366;
+  color: #fff;
+  font-size: 16px;
+}
+
+/* ================================
+   PAGINATION
+================================ */
+.pagination {
+  margin-top: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.pagination button {
+  padding: 6px 14px;
+  border-radius: 6px;
+  border: none;
+  background: #2563eb;
+  color: #fff;
+  cursor: pointer;
+}
+
+.pagination button:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+}

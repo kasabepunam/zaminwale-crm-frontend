@@ -1,0 +1,54 @@
+/* ---------------------------
+   PIE CHART CARD CONTAINER
+----------------------------*/
+.pie-chart-card {
+  background: linear-gradient(135deg, #0a58ca, #6610f2, #6f42c1, #d63384);
+  padding: 25px;
+  border-radius: 18px;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  color: white;
+  font-weight: bold;
+}
+
+/* ---------------------------
+   TITLE
+----------------------------*/
+.pie-chart-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 20px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+/* ---------------------------
+   CHART WRAPPER
+----------------------------*/
+.pie-chart-wrapper {
+  width: 250px !important;   /* 🔥 येथे तू हवे ते value दे */
+  height: 320px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;            /* Center मध्ये ठेवण्यासाठी */
+}
+
+
+/* ---------------------------
+   CHART CANVAS
+----------------------------*/
+.pie-chart-canvas {
+  max-width: 260px !important;
+  max-height: 260px !important;
+}
+
+/* ---------------------------
+   LEGEND TEXT (WHITE + BOLD)
+----------------------------*/
+.pie-chart-card .chartjs-legend li span {
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  font-size: 15px !important;
+}

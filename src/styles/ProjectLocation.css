@@ -1,0 +1,163 @@
+/* ===== MAIN CONTAINER ===== */
+.project-location-container {
+  padding: 20px 30px;
+  background: #f7f9fc;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  margin-left:100px;
+}
+
+/* ===== HEADING ===== */
+.project-location-container h1 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* ===== FILTER ROW ===== */
+.filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 15px;
+  gap: 10px;
+}
+
+.filter-row label {
+  font-weight: 600;
+  color: #444;
+  min-width: 140px;
+}
+
+/* DROPDOWNS */
+.filter-row select {
+  padding: 8px 12px;
+  width: 250px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background: white;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.filter-row select:hover {
+  border-color: #007bff;
+}
+
+.filter-row select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
+}
+
+/* ===== TITLE ROW ===== */
+.location-details h3 {
+  margin: 15px 0;
+  color: #222;
+}
+
+/* ===== TABLE ===== */
+.location-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.05);
+}
+
+/* HEADER */
+.location-table thead {
+  background: #007bff;
+  color: white;
+}
+
+.location-table th {
+  padding: 12px;
+  font-size: 14px;
+  text-align: left;
+}
+
+/* BODY */
+.location-table td {
+  padding: 10px;
+  font-size: 13px;
+  border-bottom: 1px solid #eee;
+}
+
+/* HOVER EFFECT */
+.location-table tbody tr:hover {
+  background: #f1f7ff;
+}
+
+/* STATUS COLORS */
+.location-table td.active {
+  color: green;
+  font-weight: bold;
+}
+
+.location-table td.inactive {
+  color: red;
+  font-weight: bold;
+}
+
+/* ===== PAGINATION ===== */
+.pagination-controls {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.pagination-controls button {
+  padding: 6px 14px;
+  border-radius: 6px;
+  border: none;
+  background: #007bff;
+  color: white;
+  cursor: pointer;
+  font-size: 13px;
+  transition: 0.2s;
+}
+
+.pagination-controls button:hover {
+  background: #0056b3;
+}
+
+.pagination-controls span {
+  font-weight: bold;
+}
+
+/* ===== NO DATA ===== */
+.location-details p {
+  margin-top: 15px;
+  color: red;
+  font-weight: bold;
+}
+
+/* ===== MOBILE RESPONSIVE ===== */
+@media (max-width: 768px) {
+
+  .filter-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filter-row label {
+    min-width: auto;
+  }
+
+  .filter-row select {
+    width: 100%;
+  }
+
+  .location-table {
+    font-size: 12px;
+  }
+
+  .location-table th,
+  .location-table td {
+    padding: 8px;
+  }
+}

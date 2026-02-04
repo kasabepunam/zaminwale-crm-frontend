@@ -1,0 +1,294 @@
+/* ================= ROOT ================= */
+.ac-page {
+  padding: 20px;
+  background: #f4f6f9;
+  min-height: 100vh;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  margin-left:140px;
+}
+
+/* ================= TITLE ================= */
+.ac-title {
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+/* ================= FILTERS ================= */
+.ac-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  background: #ffffff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.ac-search,
+.ac-date,
+.ac-dropdown {
+  padding: 8px 12px;
+  border: 1px solid #dcdde1;
+  border-radius: 6px;
+  font-size: 14px;
+  min-width: 180px;
+}
+
+.ac-search:focus,
+.ac-date:focus,
+.ac-dropdown:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+/* ================= BUTTONS ================= */
+.ac-btn {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.ac-btn.export {
+  background: #27ae60;
+  color: white;
+}
+
+.ac-btn.export:hover {
+  background: #219150;
+}
+
+.ac-btn.reset {
+  background: #e74c3c;
+  color: white;
+}
+
+.ac-btn.reset:hover {
+  background: #c0392b;
+}
+
+/* ================= MULTI SELECT ================= */
+.ac-multiselect-dropdown {
+  position: relative;
+  min-width: 180px;
+}
+
+.ac-multiselect-header {
+  padding: 8px 12px;
+  border: 1px solid #dcdde1;
+  border-radius: 6px;
+  background: white;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ac-multiselect-options {
+  position: absolute;
+  top: 105%;
+  left: 0;
+  width: 100%;
+  background: white;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  max-height: 220px;
+  overflow-y: auto;
+  z-index: 100;
+}
+
+.ac-checkbox-label {
+  display: flex;
+  gap: 6px;
+  padding: 7px 10px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.ac-checkbox-label:hover {
+  background: #f1f2f6;
+}
+
+/* ================= SUMMARY ================= */
+.ac-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.ac-summary .card {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  border-left: 5px solid #3498db;
+}
+.card.cancelled {
+  background: #fff0f0;
+  border-left: 5px solid #ff4d4d;
+  color: #b30000;
+}
+
+.ac-summary .card b {
+  font-size: 22px;
+  color: #2c3e50;
+}
+
+/* Color Variations */
+.card.active { border-color: #2ecc71; }
+.card.saledeed { border-color: #2980b9; }
+.card.forfeit { border-color: #f39c12; }
+.card.inactive { border-color: #7f8c8d; }
+.card.refund { border-color: #8e44ad; }
+.card.received { border-color: #16a085; }
+.card.balance { border-color: #e74c3c; }
+.card.revenue { border-color: #34495e; }
+
+/* ================= TABLE ================= */
+.ac-table-wrap {
+  background: white;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  overflow-x: auto;
+}
+
+.ac-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.ac-table th {
+  background: linear-gradient(rgba(43, 95, 133, 0.92), rgba(36, 101, 207, 0.92));
+  color: white;
+  padding: 10px;
+  text-align: left;
+  position: sticky;
+  top: 0;
+}
+
+.ac-table td {
+  padding: 9px 10px;
+  border-bottom: 1px solid #ecf0f1;
+}
+
+.ac-table tr:hover {
+  background: #f8f9fa;
+}
+
+/* Sorting */
+.sortable {
+  cursor: pointer;
+}
+
+.sortable:hover {
+  background: #34495e;
+}
+
+/* Amount Colors */
+.green {
+  color: #27ae60;
+  font-weight: 600;
+}
+
+.red {
+  color: #e74c3c;
+  font-weight: 600;
+}
+
+/* ================= BADGES ================= */
+.badge {
+  padding: 4px 8px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  color: white;
+}
+
+.badge.booking {
+  background: #2980b9;
+}
+
+.badge.installment {
+  background: #8e44ad;
+}
+
+/* Status Badge */
+.status-badge {
+  padding: 4px 8px;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 600;
+  color: black;
+}
+
+/* Status Colors */
+.status-badge.activecustomer { background: #2ecc71; }
+.status-badge.saledeeddone { background: #3498db; }
+.status-badge.forfeit { background: #f39c12; }
+.status-badge.bookingcancelled { background: #7f8c8d; }
+.status-badge.refunddone { background: #8e44ad; }
+.status-badge.chequebounce { background: #e74c3c; }
+.status-badge.booking { background: #16a085; }
+.status-badge.installment { background: #d35400; }
+
+/* ================= PAGINATION ================= */
+.ac-pagination {
+  margin-top: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.ac-pagination select {
+  padding: 5px 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.page-controls {
+  display: flex;
+  gap: 5px;
+}
+
+.page-controls button {
+  padding: 5px 10px;
+  border: 1px solid #dcdde1;
+  background: white;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: 0.2s;
+}
+
+.page-controls button:hover {
+  background: #3498db;
+  color: white;
+}
+
+.page-controls button.active {
+  background: #3498db;
+  color: white;
+  border-color: #3498db;
+}
+
+.page-controls button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.page-info {
+  font-size: 13px;
+  color: #555;
+}

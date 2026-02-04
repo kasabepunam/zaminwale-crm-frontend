@@ -1,0 +1,243 @@
+/* src/styles/Reports.css */
+
+/* --- General Page Styles --- */
+.reports-page
+{
+  padding: 20px 30px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin-left: 130px;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.reports-page h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #1a1a1a;
+}
+
+/* --- Filter Bar --- */
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.filter-bar input.small-search {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  min-width: 200px;
+}
+
+.filter-bar select.status-dropdown {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  min-width: 180px;
+}
+
+.export-btn {
+  background-color: #4caf50;
+  color: white !important;
+  padding: 8px 15px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.2s ease-in-out;
+}
+
+.export-btn:hover {
+  background-color: #45a049;
+}
+
+/* --- Table Wrapper --- */
+.table-wrapper {
+  overflow-x: auto;
+  background: white;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0px 3px 10px rgba(0,0,0,0.05);
+}
+
+/* --- Table Styles --- */
+.reports-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 1200px;
+}
+
+.reports-table th, .reports-table td {
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+  font-size: 14px;
+}
+
+.reports-table th {
+  background: linear-gradient(#404243, #2b5f85, #2465cf);
+  font-weight: 600;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  color:white;
+}
+
+.reports-table tr:hover {
+  background-color: #f9f9f9;
+}
+
+/* --- Staff Columns Scroll --- */
+.reports-table td {
+  white-space: nowrap;
+}
+
+/* --- Action Buttons --- */
+.edit-btn, .delete-btn {
+  border: none;
+  cursor: pointer;
+  padding: 6px 10px;
+  margin: 0 2px;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.edit-btn {
+  background-color: #2196f3;
+  color: white;
+}
+
+.edit-btn:hover {
+  background-color: #1976d2;
+}
+
+.delete-btn {
+  background-color: #f44336;
+  color: white;
+}
+
+.delete-btn:hover {
+  background-color: #d32f2f;
+}
+
+/* --- Pagination --- */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.pagination button {
+  padding: 6px 12px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: white;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pagination button:hover:not(:disabled) {
+  background-color: #f1f1f1;
+}
+
+/* --- No Data Message --- */
+.reports-table td[colspan] {
+  text-align: center;
+  font-style: italic;
+  color: #777;
+  padding: 20px 0;
+}
+
+/* --- Modal Overlay --- */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* --- Modal Box --- */
+.modal-content {
+  background: white;
+  padding: 25px 30px;
+  border-radius: 10px;
+  width: 600px;
+  max-width: 95%;
+  box-shadow: 0px 5px 20px rgba(0,0,0,0.2);
+  position: relative;
+}
+
+/* --- Modal Close Button --- */
+.modal-content .close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: #f44336;
+  border: none;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.modal-content .close-btn:hover {
+  background-color: #d32f2f;
+}
+
+/* --- Modal Form Fields --- */
+.modal-content input, .modal-content select, .modal-content textarea {
+  width: 100%;
+  padding: 8px 12px;
+  margin: 8px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+/* --- Modal Save Button --- */
+.modal-content .save-btn {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.modal-content .save-btn:hover {
+  background-color: #45a049;
+}
+
+/* --- Responsive --- */
+@media screen and (max-width: 1024px) {
+  .filter-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .reports-table {
+    font-size: 12px;
+  }
+}

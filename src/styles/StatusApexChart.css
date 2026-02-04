@@ -1,0 +1,89 @@
+/* src/styles/StatusApexChart.css */
+
+.status-apex-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 18px 0 34px;
+}
+
+/* chart + controls row */
+.chart-and-controls {
+  display: flex;
+  gap: 22px;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  max-width: 1100px;
+  padding: 18px;
+  border-radius: 14px;
+  background: linear-gradient(180deg, rgba(10,20,40,0.85), rgba(6,10,25,0.9));
+  box-shadow: 0 8px 30px rgba(0,0,0,0.35);
+}
+
+/* chart card (left) */
+.chart-card {
+  flex: 1.35;
+  min-width: 360px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* controls card (right) */
+.controls-card {
+  width: 260px;
+  padding: 14px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.03);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.controls-card h4 {
+  margin: 0;
+  font-size: 16px;
+  color: #fff;
+  font-weight: 700;
+}
+
+/* year select */
+.year-select {
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: none;
+  background: rgba(255,255,255,0.06);
+  color: #fff;
+  font-weight: 600;
+}
+
+/* legend summary */
+.legend-summary {
+  margin-top: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+  color: #eaeaea;
+}
+
+.legend-summary div strong {
+  color: #fff;
+  margin-right: 6px;
+}
+
+/* style apexcharts canvas container */
+.apexcharts-canvas {
+  /* ensure canvas looks crisp on dark bg */
+}
+
+/* responsive */
+@media (max-width: 880px) {
+  .chart-and-controls {
+    flex-direction: column;
+    padding: 12px;
+  }
+  .controls-card { width: 100%; }
+}
