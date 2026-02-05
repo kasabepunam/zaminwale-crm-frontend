@@ -434,7 +434,7 @@ const AddCustomer = ({ editCustomer, onSaved }) => {
                         <option value="BHIM">BHIM</option>
                         <option value="Card Payment">Card Payment</option>
                       </select>
-                      <label>Cheque / UTR Number< /label>
+                      <label>Cheque / UTR Number</label>
                       <input type="text" name="chequeNo" value={formData.chequeNo} onChange={handleChange} />
                       <label>Cheque Date</label>
                       <input type="date" name="chequeDate" value={formData.chequeDate} onChange={handleChange} />

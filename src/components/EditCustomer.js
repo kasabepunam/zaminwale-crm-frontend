@@ -4,11 +4,13 @@ import axios from "axios";
 import "./EditCustomerModal.css";
 
 function EditCustomerModal({ show, onClose, customer, onSave }) {
-  const [formData, setFormData] = useState({ ...customer });
+  const [formData, setFormData] = useState({});
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    setFormData({ ...customer });
+    if (customer) {
+      setFormData({ ...customer });
+    }
   }, [customer]);
 
   const handleChange = (e) => {
@@ -18,8 +20,16 @@ function EditCustomerModal({ show, onClose, customer, onSave }) {
 
   const handleInstallmentChange = (index, field, value) => {
     const updatedInstallments = [...(formData.installments || [])];
-    updatedInstallments[index] = { ...updatedInstallments[index], [field]: value };
-    setFormData((prev) => ({ ...prev, installments: updatedInstallments }));
+
+    updatedInstallments[index] = {
+      ...updatedInstallments[index],
+      [field]: value,
+    };
+
+    setFormData((prev) => ({
+      ...prev,
+      installments: updatedInstallments,
+    }));
   };
 
   const addInstallment = () => {
@@ -34,8 +44,9 @@ function EditCustomerModal({ show, onClose, customer, onSave }) {
       chequeNo: "",
       chequeDate: "",
       remark: "",
-      status:""
+      status: "",
     };
+
     setFormData((prev) => ({
       ...prev,
       installments: [...(prev.installments || []), newInst],
@@ -45,16 +56,26 @@ function EditCustomerModal({ show, onClose, customer, onSave }) {
   const removeInstallment = (index) => {
     const updatedInstallments = [...(formData.installments || [])];
     updatedInstallments.splice(index, 1);
-    setFormData((prev) => ({ ...prev, installments: updatedInstallments }));
+
+    setFormData((prev) => ({
+      ...prev,
+      installments: updatedInstallments,
+    }));
   };
 
+  // ✅ MAIN SUBMIT FUNCTION
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+
     try {
-      //await axios.put(`https://zaminwale-crm-backend-yztw.onrender.com/api/customers/${customer._id}`, formData);
-       await axios.post('hhttps://zaminwale-crm-backend-yztw.onrender.com/api/customers/${customer._id}`, formData);"
+      await axios.put(
+        `https://zaminwale-crm-backend-yztw.onrender.com/api/customers/${customer._id}`,
+        formData
+      );
+
       alert("✅ Customer updated successfully!");
+
       onSave(formData);
       onClose();
     } catch (err) {
@@ -66,12 +87,34 @@ function EditCustomerModal({ show, onClose, customer, onSave }) {
   };
 
   if (!show) return null;
+
   const fields = [
-    "name","phone","address","location","status","customerId",
-    "aadharCard","panCard","bookingArea","rate","totalAmount",
-    "bookingAmount","receivedAmount","balanceAmount","stampDutyCharges",
-    "village","mouCharge","bankName","paymentMode","chequeNo",
-    "chequeDate","remark","callingBy","attendingBy","siteVisitBy","closingBy"
+    "name",
+    "phone",
+    "address",
+    "location",
+    "status",
+    "customerId",
+    "aadharCard",
+    "panCard",
+    "bookingArea",
+    "rate",
+    "totalAmount",
+    "bookingAmount",
+    "receivedAmount",
+    "balanceAmount",
+    "stampDutyCharges",
+    "village",
+    "mouCharge",
+    "bankName",
+    "paymentMode",
+    "chequeNo",
+    "chequeDate",
+    "remark",
+    "callingBy",
+    "attendingBy",
+    "siteVisitBy",
+    "closingBy",
   ];
 
   return (
@@ -79,16 +122,19 @@ function EditCustomerModal({ show, onClose, customer, onSave }) {
       <div className="modal-content">
         <h2>Edit Customer</h2>
 
-        <form className="edit-customer-form">
+        {/* ✅ FORM */}
+        <form className="edit-customer-form" onSubmit={handleSubmit}>
           {/* Basic Fields */}
           {fields.map((field) => (
             <div className="form-group" key={field}>
               <label>{field.replace(/([A-Z])/g, " $1")}</label>
+
               <input
                 type={
                   field.toLowerCase().includes("date")
                     ? "date"
-                    : field.toLowerCase().includes("amount") || field.toLowerCase().includes("rate")
+                    : field.toLowerCase().includes("amount") ||
+                      field.toLowerCase().includes("rate")
                     ? "number"
                     : "text"
                 }
@@ -99,84 +145,144 @@ function EditCustomerModal({ show, onClose, customer, onSave }) {
             </div>
           ))}
 
-          {/* Installments Section */}
+          {/* Installments */}
           <h3>Installments</h3>
+
           {(formData.installments || []).map((inst, index) => (
             <div key={index} className="installment-row">
               <input
                 type="date"
                 value={inst.installmentDate || ""}
-                onChange={(e) => handleInstallmentChange(index, "installmentDate", e.target.value)}
-              />
-              <input
-                type="number"
-                value={inst.installmentAmount || ""}
-                placeholder="Installment Amount"
-                onChange={(e) => handleInstallmentChange(index, "installmentAmount", e.target.value)}
-              />
-              <input
-                type="number"
-                value={inst.receivedAmount || ""}
-                placeholder="Received Amount"
-                onChange={(e) => handleInstallmentChange(index, "receivedAmount", e.target.value)}
-              />
-              <input
-                type="number"
-                value={inst.balanceAmount || ""}
-                placeholder="Balance Amount"
-                onChange={(e) => handleInstallmentChange(index, "balanceAmount", e.target.value)}
-              />
-              <input
-                type="text"
-                value={inst.bankName || ""}
-                placeholder="Bank Name"
-                onChange={(e) => handleInstallmentChange(index, "bankName", e.target.value)}
-              />
-              <input
-                type="text"
-                value={inst.paymentMode || ""}
-                placeholder="Payment Mode"
-                onChange={(e) => handleInstallmentChange(index, "paymentMode", e.target.value)}
-              />
-              <input
-                type="text"
-                value={inst.chequeNo || ""}
-                placeholder="Cheque No"
-                onChange={(e) => handleInstallmentChange(index, "chequeNo", e.target.value)}
-              />
-              <input
-                type="date"
-                value={inst.chequeDate || ""}
-                onChange={(e) => handleInstallmentChange(index, "chequeDate", e.target.value)}
-              />
-              <input
-                type="text"
-                value={inst.remark || ""}
-                placeholder="Remark"
-                onChange={(e) => handleInstallmentChange(index, "remark", e.target.value)}
+                onChange={(e) =>
+                  handleInstallmentChange(
+                    index,
+                    "installmentDate",
+                    e.target.value
+                  )
+                }
               />
 
               <input
-                             type="text"
-                             value={inst.status || ""}
-                             placeholder="status"
-                             onChange={(e) => handleInstallmentChange(index, "status", e.target.value)}
-                           />
-              <button type="button" className="remove-btn" onClick={() => removeInstallment(index)}>
+                type="number"
+                placeholder="Installment Amount"
+                value={inst.installmentAmount || ""}
+                onChange={(e) =>
+                  handleInstallmentChange(
+                    index,
+                    "installmentAmount",
+                    e.target.value
+                  )
+                }
+              />
+
+              <input
+                type="number"
+                placeholder="Received Amount"
+                value={inst.receivedAmount || ""}
+                onChange={(e) =>
+                  handleInstallmentChange(
+                    index,
+                    "receivedAmount",
+                    e.target.value
+                  )
+                }
+              />
+
+              <input
+                type="number"
+                placeholder="Balance Amount"
+                value={inst.balanceAmount || ""}
+                onChange={(e) =>
+                  handleInstallmentChange(
+                    index,
+                    "balanceAmount",
+                    e.target.value
+                  )
+                }
+              />
+
+              <input
+                type="text"
+                placeholder="Bank Name"
+                value={inst.bankName || ""}
+                onChange={(e) =>
+                  handleInstallmentChange(index, "bankName", e.target.value)
+                }
+              />
+
+              <input
+                type="text"
+                placeholder="Payment Mode"
+                value={inst.paymentMode || ""}
+                onChange={(e) =>
+                  handleInstallmentChange(index, "paymentMode", e.target.value)
+                }
+              />
+
+              <input
+                type="text"
+                placeholder="Cheque No"
+                value={inst.chequeNo || ""}
+                onChange={(e) =>
+                  handleInstallmentChange(index, "chequeNo", e.target.value)
+                }
+              />
+
+              <input
+                type="date"
+                value={inst.chequeDate || ""}
+                onChange={(e) =>
+                  handleInstallmentChange(index, "chequeDate", e.target.value)
+                }
+              />
+
+              <input
+                type="text"
+                placeholder="Remark"
+                value={inst.remark || ""}
+                onChange={(e) =>
+                  handleInstallmentChange(index, "remark", e.target.value)
+                }
+              />
+
+              <input
+                type="text"
+                placeholder="Status"
+                value={inst.status || ""}
+                onChange={(e) =>
+                  handleInstallmentChange(index, "status", e.target.value)
+                }
+              />
+
+              <button
+                type="button"
+                className="remove-btn"
+                onClick={() => removeInstallment(index)}
+              >
                 ❌ Remove
               </button>
             </div>
           ))}
+
           <button type="button" onClick={addInstallment} className="add-btn">
             + Add Installment
           </button>
 
           {/* Bottom Buttons */}
-          <div style={{ display: "flex", justifyContent: "center", gap: "20px", marginTop: "30px" }}>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              gap: "20px",
+              marginTop: "30px",
+            }}
+          >
             <button type="button" className="close-btn" onClick={onClose}>
               Cancel
             </button>
-            <button type="submit" className="save-btn" onClick={handleSubmit} disabled={loading}>
+
+            {/* ✅ NO onClick HERE */}
+            <button type="submit" className="save-btn" disabled={loading}>
               {loading ? "Updating..." : "Update"}
             </button>
           </div>
