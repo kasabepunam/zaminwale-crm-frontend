@@ -3,7 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "../styles/Login.css"; // same style reuse
 
-const API = process.env.REACT_APP_API_URL || "http://localhost:5001";
+const API = process.env.REACT_APP_API_URL || "https://zaminwale-crm-backend-yztw.onrender.com";
 
 export default function Register() {
   const [form, setForm] = useState({

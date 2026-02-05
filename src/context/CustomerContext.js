@@ -10,7 +10,7 @@ export const CustomerProvider = ({ children }) => {
   const [loading, setLoading] = useState(false);
 
   // ✅ LAN-ready BASE URL
-  const BASE_URL = "http://192.168.29.50:5001/api/customers";
+  const BASE_URL = "https://zaminwale-crm-backend-yztw.onrender.com/api/customers";
 
   // 🔹 Fetch all customers
   const fetchCustomers = async () => {

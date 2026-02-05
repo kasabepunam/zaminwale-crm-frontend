@@ -25,7 +25,7 @@ const AddStaff = ({ currentUser }) => {
 
     try {
       const res = await axios.post(
-        "http://localhost:5001/api/staff", // ✅ correct route
+        "https://zaminwale-crm-backend-yztw.onrender.com/api/staff", // ✅ correct route
         formData
       );
 

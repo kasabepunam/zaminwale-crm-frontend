@@ -5,7 +5,7 @@ import jsPDF from "jspdf";
 import autoTable from "jspdf-autotable";
 import "../styles/TotalReceived.css";
 
-const BASE_URL = "http://192.168.29.50:5001";
+const BASE_URL = "https://zaminwale-crm-backend-yztw.onrender.com";
 
 /* ================= DATE HELPERS ================= */
 const parseDate = (raw) => {

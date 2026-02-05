@@ -4,7 +4,7 @@ import * as XLSX from "xlsx";
 import { Navigate } from "react-router-dom";
 import "../styles/ActiveCustomers.css";
 
-const BASE_URL = "http://192.168.29.50:5001";
+const BASE_URL = "https://zaminwale-crm-backend-yztw.onrender.com";
 
 const STATUS_VALUES = [
 

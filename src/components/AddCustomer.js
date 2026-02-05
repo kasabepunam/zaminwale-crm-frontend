@@ -300,7 +300,7 @@ const AddCustomer = ({ editCustomer, onSaved }) => {
     setSaving(true);
     try {
       const payload = { ...formData, user: loggedInUser };
-      const baseURL = "http://192.168.29.50:5001";
+      const baseURL = "https://zaminwale-crm-backend-yztw.onrender.com";
 
       if (formData._id) {
         await axios.put(`${baseURL}/api/customers/${formData._id}`, payload);

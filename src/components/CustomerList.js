@@ -58,7 +58,7 @@ function CustomerList() {
   // =================== FETCH ======================
   const fetchCustomers = async () => {
     try {
-      const res = await axios.get("http://192.168.29.50:5001/api/customers");
+      const res = await axios.get("https://zaminwale-crm-backend-yztw.onrender.com/api/customers");
       setCustomers(res.data);
     } catch (err) {
       console.error("Fetch Error:", err);
@@ -172,7 +172,7 @@ function CustomerList() {
 
     await Promise.all(
       selectedCustomers.map(id =>
-        axios.delete(`http://192.168.29.50:5001/api/customers/${id}`)
+        axios.delete(`https://zaminwale-crm-backend-yztw.onrender.com/api/customers/${id}`)
       )
     );
 

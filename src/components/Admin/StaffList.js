@@ -37,7 +37,7 @@ export default function StaffList({ currentUser }) {
       setPageLoading(true);
 
       const res = await axios.get(
-        "http://localhost:5001/api/staff"
+        "https://zaminwale-crm-backend-yztw.onrender.com/api/staff"
       );
 
       if (Array.isArray(res.data)) {
@@ -75,7 +75,7 @@ export default function StaffList({ currentUser }) {
 
     try {
       await axios.post(
-        "http://localhost:5001/api/staff",
+        "https://zaminwale-crm-backend-yztw.onrender.com/api/staff",
         {
           staffId,
           name,

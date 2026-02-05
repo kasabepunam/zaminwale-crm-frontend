@@ -35,7 +35,7 @@ const Villa99Revenue = () => {
 
   useEffect(() => {
     axios
-      .get("http://192.168.29.50:5001/api/customers")
+      .get("https://zaminwale-crm-backend-yztw.onrender.com/api/customers")
       .then((res) => setCustomers(res.data || []))
       .finally(() => setLoading(false));
   }, []);

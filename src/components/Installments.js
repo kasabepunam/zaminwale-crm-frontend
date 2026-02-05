@@ -68,7 +68,7 @@ function Installments() {
 
   /* ================= FETCH ================= */
   const fetchCustomers = () => {
-    axios.get("http://192.168.29.50:5001/api/customers").then((res) => {
+    axios.get("https://zaminwale-crm-backend-yztw.onrender.com/api/customers").then((res) => {
       const data = res.data.map((c) => {
         const totalAmount = c.installments?.reduce(
           (acc, i) => acc + parseFloat(i.installmentAmount || 0),
@@ -190,12 +190,12 @@ function Installments() {
   const saveInstallment = async () => {
     if (activeInstallment) {
       await axios.put(
-        `http://192.168.29.50:5001/api/customers/${activeCustomer._id}/installments/${activeInstallment._id}`,
+        `https://zaminwale-crm-backend-yztw.onrender.com/api/customers/${activeCustomer._id}/installments/${activeInstallment._id}`,
         form
       );
     } else {
       await axios.post(
-        `http://192.168.29.50:5001/api/customers/${activeCustomer._id}/installments`,
+        `https://zaminwale-crm-backend-yztw.onrender.com/api/customers/${activeCustomer._id}/installments`,
         form
       );
     }
@@ -206,7 +206,7 @@ function Installments() {
   const deleteInstallment = async (cid, iid) => {
     if (window.confirm("Delete this installment?")) {
       await axios.delete(
-        `http://192.168.29.50:5001/api/customers/${cid}/installments/${iid}`
+        `https://zaminwale-crm-backend-yztw.onrender.com/api/customers/${cid}/installments/${iid}`
       );
       fetchCustomers();
     }

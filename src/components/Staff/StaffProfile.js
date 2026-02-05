@@ -10,7 +10,7 @@ export default function StaffProfile() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const resProfile = await axios.get("http://localhost:5001/api/staff/me");
+      const resProfile = await axios.get("https://zaminwale-crm-backend-yztw.onrender.com/api/staff/me");
       setStaff(resProfile.data.staff);
       setCustomers(resProfile.data.customers);
 

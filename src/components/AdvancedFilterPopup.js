@@ -31,7 +31,7 @@ function AdvancedFilterPopup({ show, onClose, onApplyFilters, savedFilters }) {
   // ✅ FETCH VALUES FROM DB
   useEffect(() => {
     if (!show) return;
-    fetch("http://192.168.29.50:5001/api/customers")
+    fetch("https://zaminwale-crm-backend-yztw.onrender.com/api/customers")
       .then(res => res.json())
       .then(data => {
         const clean = v => v ? v.toString().trim() : "";

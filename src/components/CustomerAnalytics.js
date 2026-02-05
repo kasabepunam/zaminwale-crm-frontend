@@ -27,7 +27,7 @@ function CustomerAnalytics() {
     const fetchCustomers = async () => {
       setLoading(true);
       try {
-        const res = await axios.get("http://192.168.29.50:5001/api/customers");
+        const res = await axios.get("https://zaminwale-crm-backend-yztw.onrender.com/api/customers");
         setCustomers(res.data);
       } catch (err) {
         console.error("Error fetching customers:", err);

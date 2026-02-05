@@ -32,7 +32,7 @@ function CustomerPreview() {
   // =================== Fetch customer if not passed via state ===================
   useEffect(() => {
     if (!currentCustomer && id) {
-      axios.get(`http://192.168.29.50:5001/api/customers/${id}`)
+      axios.get(`http://192.168.29.50:https://zaminwale-crm-backend-yztw.onrender.com/api/customers/${id}`)
         .then(res => setCurrentCustomer(res.data))
         .catch(err => {
           console.error(err);

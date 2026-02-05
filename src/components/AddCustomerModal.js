@@ -46,7 +46,7 @@ function AddCustomerModal({ show, onClose, onSave }) {
       // Calculate balance if needed
       formData.balanceAmount = Number(formData.totalAmount || 0) - Number(formData.receivedAmount || 0);
 
-      await axios.post("http://localhost:5001/api/customers", formData);
+      await axios.post("https://zaminwale-crm-backend-yztw.onrender.com/api/customers", formData);
       alert("Customer added successfully!");
       onSave(); // refresh parent list
       onClose();

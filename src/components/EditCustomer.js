@@ -52,8 +52,8 @@ function EditCustomerModal({ show, onClose, customer, onSave }) {
     e.preventDefault();
     setLoading(true);
     try {
-      //await axios.put(`http://localhost:5001/api/customers/${customer._id}`, formData);
-       await axios.post('http://192.168.29.50:5001/api/customers/${customer._id}`, formData);"
+      //await axios.put(`https://zaminwale-crm-backend-yztw.onrender.com/api/customers/${customer._id}`, formData);
+       await axios.post('hhttps://zaminwale-crm-backend-yztw.onrender.com/api/customers/${customer._id}`, formData);"
       alert("✅ Customer updated successfully!");
       onSave(formData);
       onClose();

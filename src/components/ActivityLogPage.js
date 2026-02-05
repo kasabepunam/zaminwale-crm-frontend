@@ -12,7 +12,7 @@ const ActivityLogPage = () => {
   useEffect(() => {
     const fetchLogs = async () => {
       try {
-        const res = await axios.get("http://localhost:5001/api/activity-log");
+        const res = await axios.get("https://zaminwale-crm-backend-yztw.onrender.com/api/activity-log");
         setLogs(res.data);
       } catch (err) {
         console.error("Error fetching logs:", err);

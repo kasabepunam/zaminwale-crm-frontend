@@ -1,1 +1,1 @@
-export const BASE_URL = "http://192.168.29.50:5001";
+export const BASE_URL = "https://zaminwale-crm-backend-yztw.onrender.com";
