@@ -5,7 +5,7 @@
   "description": "Zaminwale CRM Frontend",
   "main": "src/index.js",
   "engines": {
-    "node": "18.x"
+    "node": "24.x"
   },
   "scripts": {
     "start": "react-scripts start",
